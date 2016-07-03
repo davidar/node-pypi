@@ -1,31 +1,32 @@
 {
-  "name":         "pypi",
-  "description":  "Client for XMLRPC Python Package Index",
-  "keywords":     "python pypi xmlrpc client",
-  "author":       "Lukasz Balcerzak",
-  "version":      "0.1.2",
-  "licenses":     [{
-    "type":       "MIT",
-    "url":        "https://github.com/lukaszb/pypi/raw/master/LICENSE"
-  }],
-  "engines":      {
-    "node":       ">=0.4.0"
+  "name": "pypi",
+  "description": "Client for XMLRPC Python Package Index",
+  "keywords": "python pypi xmlrpc client",
+  "author": "Lukasz Balcerzak",
+  "version": "0.1.2",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.4.0"
   },
-  "directories" : {
-    "lib" : "./lib/pypi"
+  "directories": {
+    "lib": "./lib/pypi"
   },
-  "main" : "./index",
-  "homepage":     "https://github.com/lukaszb/pypi",
-  "repository":   {
+  "main": "lib",
+  "scripts": {
+    "build": "coffee -o lib -c src",
+    "prepublish": "npm run build"
+  },
+  "homepage": "https://github.com/lukaszb/pypi",
+  "repository": {
     "type": "git",
     "url": "git://github.com/lukaszb/pypi.git"
   },
   "dependencies": {
-    "coffee-script": ">=1.1.1",
     "xmlrpc": ">=0.8.1"
   },
-  "devDependencies" : {
-    "underscore" : ">=1.2.1",
-    "jasmine-node": ">=1.0.12"
+  "devDependencies": {
+    "coffee-script": ">=1.1.1",
+    "jasmine-node": ">=1.0.12",
+    "underscore": ">=1.2.1"
   }
 }
